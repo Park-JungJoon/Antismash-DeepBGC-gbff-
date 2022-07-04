@@ -1,5 +1,5 @@
 # Antismash-DeepBGC-gbff-
-## 1. genomic.gbff를 DeepBGC의 결과물과 Antismash 결과 비교를 위한 Antismash 옵션 탐색
+## 1. gbff파일을 DeepBGC 프로그램 사용의 결과물과 Antismash 결과 비교를 위한 Antismash 옵션 탐색
 사용하는 Antismash 옵션은 아래와 같다. 
 <pre>
 <code>
