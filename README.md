@@ -8,7 +8,7 @@ antismash --output-dir --hmmdetection-strictness loose --asf --pfam2go --rre --c
 </pre>
 이 중, DeepBGC의 결과물에 대한 비교 분석을 위해 hmmdetection strictness의 loose/relaxed와 clusterhmmer/fullhmmer 옵션의 선택이 필요하였다.
 아래는 6개의 genome에 대한 각 옵션별 통계이다. 추가적으로, Antismash 프로그램에 대한 소요시간을 마지막 행에 표기하였다. 
-||DeepBGC|loose,clusterhmmer|relaxed,clusterhmemr|relaxed,clusterhmmer|
+||DeepBGC|loose,clusterhmmer|relaxed,clusterhmmer|loose,fullhmmer|
 |-|-|-|-|-|
 |Bifidobacterium aesculapii|32|15|2|15|
 |Bifidobacterium micronisargentati|12|13|0|13|
