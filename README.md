@@ -16,6 +16,6 @@ antismash --output-dir --hmmdetection-strictness loose --asf --pfam2go --rre --c
 |Lactococcus hircilactis|18|17|5|17|
 |Streptococcus downei|13|21|10|21|
 |Streptococcus loxodontisalivarius|21|19|3|19|
-|time|-|851|361|3423|
+|time(sec)|-|851|361|3423|
 
 DeepBGC output과 가장 유사한 개수의 BGC를 반환하며, 소요시간이 적은 loose,clusterhmmer 옵션을 선택하였다. 
