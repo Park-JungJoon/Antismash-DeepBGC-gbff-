@@ -3,7 +3,7 @@
 사용하는 Antismash 옵션은 아래와 같다. 
 <pre>
 <code>
-antismash --output-dir --hmmdetection-strictness loose --asf --pfam2go --rre --clusterhmmer
+antismash --output-dir --genefinding-tool none --hmmdetection-strictness loose --asf --pfam2go --rre --clusterhmmer
 </code>
 </pre>
 이 중, DeepBGC의 결과물에 대한 비교 분석을 위해 hmmdetection strictness의 loose/relaxed와 clusterhmmer/fullhmmer 옵션의 선택이 필요하였다.
