@@ -203,3 +203,53 @@ for k,v in Dic_bgc_gene.items():
 </code>
 </pre>
 종명 - 숫자의 정보를 포함하는 meta file과 작성한 DeepBGC output table, DeepBGC output.bgc.gbk 파일 3개 간의 연관을 지어 코딩하는 부분에 어려움이 있었다. 
+
+### 3-3 3-2에서 생성한 Locus tag 정보를 2에서 생성한 Antismash와 비교하기 위한 table로 재차 가공
+<pre>
+<code>
+Dic_meta = {}
+db = []
+a = []
+with open("/home/jjpark/as_db_compare/meta_405.txt") as p:
+    lones = p.readlines()
+    for lone in lones:
+        lone = lone.rstrip()
+        Dic_meta[lone.split('\t')[-1]] = lone.split('\t')[0]
+with open("/home/jjpark/as_db_compare/405_gbff.txt") as f:
+    lines = f.readlines()
+    name = []
+    nucl_start = []
+    nucl_end = []
+    region = []
+    NZs =[]
+    for line in lines:
+        line = line.rstrip()
+        name.append(line.split('_')[0])
+        NZs.append(line.split('_')[1]+'_'+line.split('_')[2])
+        nucl_start.append(line.split('_')[3][:-2].split('-')[0])
+        nucl_end.append(line.split('_')[3][:-2].split('-')[1])
+    for i in range(len(name)):
+        db.append([name[i],NZs[i],nucl_start[i],nucl_end[i],[]])
+dic_db = {}
+for z in range(len(db)):
+    dic_db[db[z][1]+'_'+db[z][2]+'-'+db[z][3]] = db[z][0]
+dic_lt = {}
+answer = []
+with open("/home/jjpark/as_db_compare/44.txt") as f:
+    lines = f.readlines()
+    lost = []
+    for line in lines:
+        line = line.rstrip()
+        lost.append(line.split(' '))
+for i in range(len(lost)):
+    if len(lost[i]) == 2:
+        answer.append(dic_db[lost[i][0]]+'_'+lost[i][0]+'\t'+lost[i][1])
+    else:
+        pass
+for t in range(len(answer)):
+    print(answer[t])                             
+</code>
+</pre>
+
+상기의 스크립트를 실행하는 도중, DeepBGC가 detecting한 일부 BGC들의 경우 gene의 locus tag이 없는 경우가 있었다. 굉장히 짧은 contig에서 gene이 없는 경우, gene predicting을 통해 임의의 gene을 생성하고 cds에 해당 BGC의 이름을 붙힌 후 기능을 부여하는 듯 사료된다. Antismash 결과와 중복되지 않아, 4815개의 BGC중 29개의 BGC를 제외하였고, 제외한 BGC는 아래와 같다. 
+NZ_CP074378.1_2073356-2074103,NZ_LOCM01000063.1_207-339,NZ_BOCI01000551.1_0-407,NZ_JACJJQ010000105.1_0-273,NZ_BLLI01000138.1_173-839,NZ_AZGI01000037.1_8-436,NZ_JAHBBF010000030.1_233-1016,NZ_CP014835.1_1251662-1252895,NZ_UFXU01000003.1_468401-469361,NZ_PDCG01000049.1_11-431,NZ_BMAY01000047.1_2-92,NZ_BMAY01000084.1_1-97,NZ_BMAY01000094.1_112-199,NZ_BMAY01000108.1_2-200,NZ_BMAY01000110.1_0-120,NZ_AWWH01000062.1_43-1429,NZ_WSRS01000186.1_298-520,NZ_JABASA010000009.1_35302-36406,NZ_AZDU01000130.1_0-548,NZ_VFSG01000001.1_907958-908819,NZ_AZGM01000048.1_2-119,NZ_AZEU01000017.1_1-376,NZ_AZEU01000308.1_0-235,NZ_AZEU01000317.1_0-402,NZ_AZEU01000320.1_0-326,NZ_FMIX01000004.1_722704-723511,NZ_JAFBEH010000092.1_271-1063,NZ_JAFBEH010000093.1_98-1052,NZ_VFJA01000003.1_212209-218212
