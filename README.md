@@ -257,3 +257,136 @@ for t in range(len(answer)):
 NZ_CP074378.1_2073356-2074103,NZ_LOCM01000063.1_207-339,NZ_BOCI01000551.1_0-407,NZ_JACJJQ010000105.1_0-273,NZ_BLLI01000138.1_173-839,NZ_AZGI01000037.1_8-436,NZ_JAHBBF010000030.1_233-1016,NZ_CP014835.1_1251662-1252895,NZ_UFXU01000003.1_468401-469361,NZ_PDCG01000049.1_11-431,NZ_BMAY01000047.1_2-92,NZ_BMAY01000084.1_1-97,NZ_BMAY01000094.1_112-199,NZ_BMAY01000108.1_2-200,NZ_BMAY01000110.1_0-120,NZ_AWWH01000062.1_43-1429,NZ_WSRS01000186.1_298-520,NZ_JABASA010000009.1_35302-36406,NZ_AZDU01000130.1_0-548,NZ_VFSG01000001.1_907958-908819,NZ_AZGM01000048.1_2-119,NZ_AZEU01000017.1_1-376,NZ_AZEU01000308.1_0-235,NZ_AZEU01000317.1_0-402,NZ_AZEU01000320.1_0-326,NZ_FMIX01000004.1_722704-723511,NZ_JAFBEH010000092.1_271-1063,NZ_JAFBEH010000093.1_98-1052,NZ_VFJA01000003.1_212209-218212
 </code>
 </pre>
+
+## 4. DeepBGC output과 Antismash output 비교 
+앞서 만든 DeepBGC output table과 BGC와 Antismash output table의 비교를 했다. 고려한 factor로 1. 같은 contig가 해당 되어있는지 2. contig 내 locus tag이 겹치는지 를 고려한다. 비율을 jaccard similarity을 통해 표현하였다. 
+<pre>
+<code>
+Dic_meta = {}
+db = []
+a = []
+with open("/home/jjpark/as_db_compare/meta_405.txt") as p:
+    lones = p.readlines()
+    for lone in lones:
+        lone = lone.rstrip()
+        Dic_meta[lone.split('\t')[-1]] = lone.split('\t')[0]
+with open("/home/jjpark/as_db_compare/405_gbff.txt") as f:
+    lines = f.readlines()
+    name = []
+    nucl_start = []
+    nucl_end = []
+    region = []
+    NZs =[]
+    for line in lines:
+        line = line.rstrip()
+        name.append(Dic_meta[line.split('_')[0]][:-7]+'bgc.gbk')
+        NZs.append(line.split('_')[1]+'_'+line.split('_')[2])
+        nucl_start.append(line.split('_')[3][:-2].split('-')[0])
+        nucl_end.append(line.split('_')[3][:-2].split('-')[1])
+    for i in range(len(name)):
+        db.append([name[i],NZs[i],nucl_start[i],nucl_end[i],[]])
+genomes = []
+for n in range(len(db)):
+    genomes.append(db[n][0])
+genomes=list(set(genomes))
+Dic_bgc_gene = {}
+for i in range(len(genomes)):
+    with open('/home/jjpark/as_db_compare/bgc_gbk/%s'%genomes[i]) as s:
+        ls = s.readlines()
+        accession = [] #accession +
+        accession_line = []
+        locustags = []
+        for line in ls:
+            line = line.lstrip()
+            if line.startswith('ACCESSION'): #BGC name 등장하는 line index 모아둠
+                accession_line.append(ls.index(line))
+                accession_line.sort()
+            if line.startswith('gene  '): # gene/locustag들의 line index 모아둠
+                n = ls.index('     '+str(line))
+                loctag = ls.index(''.join([s for s in ls[n+1:n+3] if '/locus_tag=' in s]))
+                locustags.append(loctag)
+#bgc.gbk읽어서 locustag index, Accession index 가져옴
+        last_gene_cluster = []
+        lgc_lct = []
+        for m in locustags:
+            if int(m)>accession_line[-1]:
+                last_gene_cluster.append(int(m))
+        for w in last_gene_cluster:
+            lgc_lct.append(ls[w].split('"')[-2])
+        Dic_bgc_gene[ls[int(accession_line[-1])][12:-3]] = lgc_lct
+        for acs in accession_line[:-1]:#accession_line이 1개의 BGC가 될 것 
+            gene_cluster = []
+            for k in locustags:#locustag들은 locusgene있는 line들
+                if int(k) > int(acs):
+                    if int(k) < int(accession_line[accession_line.index(acs)+1]):
+                        gene_cluster.append(ls[int(k)].split('"')[-2])
+                    else:
+                        pass
+                else:
+                    pass
+            Dic_bgc_gene[ls[int(acs)][12:-3]] = gene_cluster
+
+for k,v in Dic_bgc_gene.items():
+    print(k,v)
+</code>
+</pre>
+<pre>
+<code>
+from collections import defaultdict
+with open("C:/Users/jungj/Desktop/antismash_table.txt") as f:
+    asls = []
+    lines = f.readlines()
+    for line in lines:
+        line=line.rstrip()
+        asls.append(line.split('\t'))
+with open("C:/Users/jungj/Desktop/lct_deepbgc.txt") as p:
+    dbls = []
+    lanes = p.readlines()
+    for lane in lanes:
+        lane = lane.rstrip()
+        dbls.append(lane.split('\t'))
+
+for i in range(len(dbls)):
+    dbls[i][0] = dbls[i][0].replace('.1','')
+    dbls[i][0] = dbls[i][0].replace('.2','')
+for n in range(len(asls)):
+    asls[n][0] = asls[n][0].replace('>','')
+    asls[n][0] = asls[n][0].replace('.1','')
+    asls[n][0] = asls[n][0].replace('<','')
+
+Das = defaultdict(dict)
+Ddb = defaultdict(dict)
+#locustag 키 = Das[k] / 벨류 풀네임(nucl start1-end100/200)
+for i in range(len(asls)):
+    Das['_'.join(asls[i][0].split('_')[1:4])][asls[i][0]] = set(asls[i][2].split(';'))
+
+for i in range(len(dbls)):
+    Ddb['_'.join(dbls[i][0].split('_')[0:3])][dbls[i][0]]=set(dbls[i][1].split(','))
+
+for k,v in Das.items():
+    if k not in Ddb:
+        for k1 in v.keys():
+            print("%s\tX\tnone"%k1)
+            continue
+    for k1,v1 in v.items(): #v1 antsismash의 locustag의 list (이중리스트)
+        for k2,v2 in Ddb[k].items(): #v2 deepbgc의 locustag의 list
+            if len(v1-v2) == 0:
+                print("%s\t%s\tdia"% (k1,k2))
+                continue
+            if len(v2-v1) == 0:
+                print("%s\t%s\taid"% (k1,k2))
+                continue
+            intersection = v1 & v2
+            jac = len(intersection)/len(v1|v2)
+            print("%s\t%s\t%s"% (k1,k2,jac))
+            
+            
+for k,v in Ddb.items():
+    if k not in Das:
+        for k1 in v.keys():
+            print("X\t%s\tnone"%k1)
+</code>
+</pre>
+output은 연구실 서버 espeon/jjpark/as_db_compare에 result.txt로서 저장했다. 
+<img width="540" alt="image" src="https://user-images.githubusercontent.com/97942772/178411633-2f4c21c6-95d7-4ed0-9e5e-64480557b483.png">
+위의 사진은 output 중 일부이다. 추가적인 통계 작업이 필요하다. 
