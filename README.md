@@ -389,4 +389,5 @@ for k,v in Ddb.items():
 </pre>
 output은 연구실 서버 espeon/jjpark/as_db_compare에 result.txt로서 저장했다. 
 <img width="540" alt="image" src="https://user-images.githubusercontent.com/97942772/178411633-2f4c21c6-95d7-4ed0-9e5e-64480557b483.png">
+
 위의 사진은 output 중 일부이다. 추가적인 통계 작업이 필요하다. 
