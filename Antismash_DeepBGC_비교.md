@@ -14,7 +14,7 @@ DeepBGC Output에서 Lacticaseibacillus jixianensis, Lactobacillus mulieris는 �
 BGC detecting의 편차가 Antismash보다 DeepBGC가 더 크다.
 
 https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff- 에서 두 프로그램 간 Detected 된 BGC의 locus tag 구성을 jaccard similarity를 통해 유사도를 측정한 txt를 만들었다.
-해당 데이터는 Antismash가 detecting한 5045개의 BGC와 DeepBGC가 detecting한 4786개의 BGC 중, 1823개의 BGC는 같은 종의 같은 contig의 같은 locus tag을 공유하였다. 
+해당 데이터는 Antismash가 detecting한 5045개의 BGC와 DeepBGC가 detecting한 4786개의 BGC 중, 1824개의 BGC는 같은 종의 같은 contig의 같은 locus tag을 공유하였다. 
 아래 히스토그램은 각각 1824개의 겹치는 region을 갖는 BGC에 대한 locus tag/region jaccard similarity에 대한 밀도 분포표이다.
 
 ![image](https://user-images.githubusercontent.com/97942772/178940537-9002037c-7777-4f7e-82d3-7bfaf624de01.png)
