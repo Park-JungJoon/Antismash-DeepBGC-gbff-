@@ -19,4 +19,4 @@ https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff- 에서 두 프로그램
 
 ![image](https://user-images.githubusercontent.com/97942772/178886144-e9becd79-31d6-4d0d-b066-e5ea188214f8.png)
 
-이 중 상위 10퍼센트의 BGC는 82% 이상의 locus tag의 일치도를 보였다. 
+이 중 75개의 BGC의 경우 75개의 BGC는 모든 locus tag이 일치해 같았고, 상위 10퍼센트의 BGC는 82% 이상의 locus tag의 일치도를 보였다. 
