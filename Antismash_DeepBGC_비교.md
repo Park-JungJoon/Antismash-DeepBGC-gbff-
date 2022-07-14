@@ -15,8 +15,10 @@ BGC detecting의 편차가 Antismash보다 DeepBGC가 더 크다.
 
 https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff- 에서 두 프로그램 간 Detected 된 BGC의 locus tag 구성을 jaccard similarity를 통해 유사도를 측정한 txt를 만들었다.
 해당 데이터는 Antismash가 detecting한 5045개의 BGC와 DeepBGC가 detecting한 4801개의 BGC 중, 1823개의 BGC는 같은 종의 같은 contig의 같은 locus tag을 공유하였다. 
-아래 그래프는 1823 종의 BGC에 대한 jaccard similarity에 대한 밀도 분포표이다. 
+아래 히스토그램은 각각 1824개의 겹치는 region을 갖는 BGC에 대한 locus tag/region jaccard similarity에 대한 밀도 분포표이다.
 
-![image](https://user-images.githubusercontent.com/97942772/178886144-e9becd79-31d6-4d0d-b066-e5ea188214f8.png)
+![image](https://user-images.githubusercontent.com/97942772/178940133-b609520e-dc6b-4327-99ca-7a88d193f55e.png)
+
+![image](https://user-images.githubusercontent.com/97942772/178940199-228d5787-08bf-4d87-a93c-b344885140f5.png)
 
 이 중 75개의 BGC의 경우 75개의 BGC는 모든 locus tag이 일치해 같았고, 상위 10퍼센트의 BGC는 82% 이상의 locus tag의 일치도를 보였다. 
