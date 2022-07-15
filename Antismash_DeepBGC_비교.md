@@ -1,7 +1,7 @@
 # Antismash-DeepBGC(gbff) 
 ## 기본적 통계
 ### Antismash 통계 
-Antismash의 최종 output candidate cluster의 기능을 통계냈다. 아래 표기한 표와 같고, multi function이 있는 경우, 각 function에 더하여 전체 BGC 개수 5045개보다 count의 합이 많다. 최우측 열에 상위 분류를 표시하였다. 상위 분류는 Antismash protocluster category에서 확인하였다. fatty acid 및 cylic carbon compound는 other에 해당한다. 
+Antismash의 최종 output candidate cluster의 기능을 통계냈다. 아래 표기한 표와 같고, multi function이 있는 경우, 각 function에 더하여 전체 BGC 개수 5045개보다 count의 합이 많다. 최우측 열에 상위 분류를 표시하였다. 상위 분류는 Antismash protocluster category에서 확인하였다. fatty acid 및 cyclic carbon compound는 other에 해당한다. 
 
 |function|count|category|
 |-|-|-|
