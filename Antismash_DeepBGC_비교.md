@@ -48,7 +48,27 @@ category를 기준으로 통계한 표는 아래와 같다.
 |PKS|206|
 |NRP|40|
 |terepene|24|
+### DeepBGC 기본 통계
+|function|count|
+|-|-|
+|antibacterial|3782|
+|antifungal|41|
+|cytotoxic|175|
+|inhibitor|64|
+|NA|798|
 
+|function|count|
+|-|-|
+|Alkaloid|0|
+|NRP|152|
+|RiPP|535|
+|Other|78|
+|Polyketide|420|
+|Saccharide|847|
+|Terpene|58|
+|NA|2753|
+
+### Antismash/DeepBGC의 비교 통계 
 ||DeepBGC|AntiSmash|
 |-|-|-|
 |BGCs per genome(median)|11.82(10)|12.46(12)|
