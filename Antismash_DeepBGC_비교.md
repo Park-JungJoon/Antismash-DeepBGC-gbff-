@@ -1,5 +1,45 @@
 # Antismash-DeepBGC(gbff) 
 ## 기본적 통계
+### Antismash 통계 
+Antismash의 최종 output candidate cluster의 기능을 통계냈다. 아래 표기한 표와 같고, multi function이 있는 경우, 각 function에 더하여 전체 BGC 개수 5045개보다 count의 합이 많다.
+
+|function|count|
+|-|-|
+|cyclic-lactone-autoinducer|37|
+|betalactone|7|
+|NRPS-like|6|
+|lanthipeptide-class-ii|52|
+|PKS-like|1|
+|RRE-containing|32|
+|RaS-RiPP|30|
+|fatty_acid|431|
+|saccharide|4068|
+|lanthipeptide-class-iii|12|
+|arylpolyene|6|
+|ladderane|1|
+|butyrolactone|3|
+|hglE-KS|2|
+|lanthipeptide-class-iv|16|
+|T3PKS|195|
+|LAP|27|
+|RiPP-like|269|
+|lanthipeptide-class-i|79|
+|furan|8|
+|terpene|24|
+|T1PKS|6|
+|halogenated|4|
+|phosphonate|1|
+|sactipeptide|1|
+|NRPS|34|
+|transAT-PKS|2|
+|lanthipeptide-class-v|1|
+|thiopeptide|11|
+|lassopeptide|10|
+|phenazine|10|
+|ranthipeptide|3|
+
+
+
 ||DeepBGC|AntiSmash|
 |-|-|-|
 |BGCs per genome(median)|11.82(10)|12.46(12)|
