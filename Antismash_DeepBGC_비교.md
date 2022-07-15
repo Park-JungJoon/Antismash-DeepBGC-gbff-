@@ -38,7 +38,15 @@ Antismash의 최종 output candidate cluster의 기능을 통계냈다. 아래 �
 |phenazine|10|Other|
 |ranthipeptide|3|RiPP|
 
-편의성을 위해 class를 재분류하였다. 
+category를 기준으로 통계한 표는 아래와 같다. 
+|category|count|
+|-|-|
+|saccharide|4068|
+|RiPP|543|
+|Other|464|
+|PKS|206|
+|NRP|40|
+|terepene|24|
 
 ||DeepBGC|AntiSmash|
 |-|-|-|
