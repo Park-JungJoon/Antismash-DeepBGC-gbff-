@@ -37,6 +37,7 @@ Antismash의 최종 output candidate cluster의 기능을 통계냈다. 아래 �
 |lassopeptide|10|RiPP|
 |phenazine|10|Other|
 |ranthipeptide|3|RiPP|
+||5345|
 
 category를 기준으로 통계한 표는 아래와 같다. 
 |category|count|
