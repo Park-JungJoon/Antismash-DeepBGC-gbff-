@@ -5,8 +5,8 @@ Probiotics 405종에 대한 Antismash output
 # 1. Antismash running
 ## 1-1. Input data 선정 
 * 고시형 균주 19종이 포함된 9속(Enterococcus, Lactobacillus, Limosilactobacillus,Bifidobacterium, Lacticaseibacillus, Lactococcus, Streptococcus, Lactiplantibacillus, Ligilactobacillus) 중, NCBI representative genome에 해당하는 405종의 gbff 데이터를 사용함.
-* 종이 분류가 불분명한  경우 Taxid를 기반으로 분류하여 사용하였음. 
-* gbff format을 사용하는 이유는, fna format의 경우  
+* 종의 분류가 불분명한  경우 Taxid를 기반으로 분류하여 사용하였음. 
+* gbff format을 사용하는 이유는, fna format의 경우  DeepBGC의 gene prediction 과정을 거치며 프로그램의 오류가 개입할 여지가 커, NCBI의 manual한 데이터를 사용해 오류를 줄이고자 함.
 
 ## 1-2. Running option
 Antismash Running에 사용한 option은 아래와 같다. 
@@ -43,12 +43,12 @@ Antismash Running에 사용한 option은 아래와 같다.
 |Number of genes|1-92|11|
 
 ## 2-2. Antismash에서 반환하는 product class에 대한 결과
-+ [Antismash](https://docs.antismash.secondarymetabolites.org/glossary/)에서 반환하는 결과는 링크와 같다. 
++ [Antismash Outputs](https://docs.antismash.secondarymetabolites.org/glossary/)
 + 405종에 대한 product의 종류는 총 32개이고, 일부는 multi function을 가진다. 
-+ Multi function의 조합으로 405종에 대한 function 결과는 총 85개이다. 
-+ [Outputs]https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff-/blob/main/AS_DB_outputs)는 링크와 같다. 
-+ 32개의 종류를 RiPP, NRP, Saccharide, PKS, terpene, Others 총 6개의 종류로 재분류하였고, 기준은 Antismash output중 proto cluster의 category에 해당하는 값(fatty acid의 경우 Other를 반환함.)으로 하였다. 
-+ Others에 carbon cyclic compounds, fatty acid들이 해당했다. 
++ Multi function의 조합으로 405종에 대한 function 결과는 총 85개의 조합을 갖는다. 
++ [Raw data](https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff-/edit/main/Antismash_data.md)
++ 32개의 종류를 RiPP, NRP, Saccharide, PKS, terpene, Others 총 6개의 종류로 재분류하였고, 기준은 Antismash output중 proto cluster의 category에 해당하는 값(fatty acid의 경우 Others로 바꿈.)으로 하였다. 
++ Others에 carbon cyclic compounds, fatty acid들이 해당한다. 
 
 
 
