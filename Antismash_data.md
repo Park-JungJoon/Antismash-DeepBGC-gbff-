@@ -1,7 +1,7 @@
 ## 1. Antismash에서 Output으로 주는 Candidate Cluster의 product를 Proto Cluster의 category를 참고해서 변환함. 
 
 |function|category|
-|-|-|-|
+|-|-|
 |cyclic-lactone-autoinducer|RiPP|
 |betalactone|Other|
 |NRPS-like|NRP|
