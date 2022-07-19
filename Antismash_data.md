@@ -35,7 +35,7 @@
 |phenazine|Other|
 |ranthipeptide|RiPP|
 
-## 2. Multiple fungtion을 갖는 경우를 나타내어 통계 냈다. 
+## 2. Multiple function을 갖는 경우를 나타내어 통계 냈다. 
 |Functions|count|
 |-|-|
 |RRE-containing|18|
