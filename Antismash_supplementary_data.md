@@ -1,4 +1,4 @@
-## 1. Antismash에서 Output으로 주는 Candidate Cluster의 product를 Proto Cluster의 category를 참고해서 변환함. 
+### 1. Antismash에서 Output으로 주는 Candidate Cluster의 product를 Proto Cluster의 category를 참고해서 변환함. 
 
 |function|category|
 |-|-|
@@ -35,7 +35,7 @@
 |phenazine|Other|
 |ranthipeptide|RiPP|
 
-## 2. Multiple function을 갖는 경우를 나타내어 통계 냈다. 
+### 2. Multiple function을 갖는 경우를 나타내어 통계 냈다. 
 |Functions|count|
 |-|-|
 |RRE-containing|18|
