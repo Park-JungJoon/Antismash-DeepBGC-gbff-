@@ -10,9 +10,11 @@ Probiotics 405종에 대한 DeepBGC(gbff) output
 
 ## 1-2. Running option
 DeepBGC Running에 사용한 option은 아래와 같다. 
-
-  deepbgc pipeline --prodigal-meta-mode %s
-
+<pre>
+<code>
+deepbgc pipeline --prodigal-meta-mode %s
+</code>
+</pre>
 
 # 2. DeepBGC Output
 + 405개의 genome에서 총 4815개의 BGC가 detected 되었다. 
