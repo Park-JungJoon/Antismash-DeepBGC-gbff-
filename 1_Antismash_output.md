@@ -67,10 +67,12 @@ Antismash Running에 사용한 option은 아래와 같다.
 |NRP;Other;PKS|1|
 |NRP;RiPP;saccharide|1|
 |NRP;Other|1|
+|sum|5045|
 + 405종에 대한 product의 종류는 총 32개이고, 일부는 multi function을 가진다. 
 + Multi function의 조합으로 405종에 대한 function 결과는 총 85개의 조합을 갖는다. [Raw data](https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff-/edit/main/Antismash_data.md)
 + 32개의 종류를 RiPP, NRP, Saccharide, PKS, terpene, Others 총 6개의 종류로 재분류하였다. 
 + Others에 carbon cyclic compounds, fatty acid들이 해당한다. 
++ transAT-PKS;PKS-like, cyclic-lactone-autoinducer;LAP;thiopeptide와 같이, 같은 category에 해당하는 product가 multiple function을 가진 output일때 단일 output에 합산했다.
 
 
 
