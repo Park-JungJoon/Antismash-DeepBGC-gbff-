@@ -42,12 +42,34 @@ Antismash Running에 사용한 option은 아래와 같다.
 |Length(bp)|1093-103712|24227|
 |Number of genes|1-92|11|
 
-## 2-2. Antismash에서 반환하는 product class에 대한 결과
-+ [Antismash Outputs](https://docs.antismash.secondarymetabolites.org/glossary/)
+## 2-2. antiSMASH에서 반환하는 product class에 대한 결과
+### [antiSMASH](https://docs.antismash.secondarymetabolites.org/glossary/)는 결과값으로 product class에 해당하는 값을 반환한다.
+|function|count|
+|-|-|
+|saccharide|3864|
+|RiPP|409|
+|Other|352|
+|PKS|163|
+|terpene|20|
+|NRP|17|
+|Other;saccharide|107|
+|RiPP;saccharide|52|
+|PKS;saccharide|30|
+|NRP;PKS|6|
+|NRP;saccharide|5|
+|Other;RiPP|4|
+|saccharide;terpene|4|
+|Other;RiPP;saccharide|2|
+|NRP;RiPP|2|
+|PKS;RiPP;saccharide|2|
+|PKS;RiPP|2|
+|NRP;Other;saccharide|1|
+|NRP;Other;PKS|1|
+|NRP;RiPP;saccharide|1|
+|NRP;Other|1|
 + 405종에 대한 product의 종류는 총 32개이고, 일부는 multi function을 가진다. 
-+ Multi function의 조합으로 405종에 대한 function 결과는 총 85개의 조합을 갖는다. 
-+ [Raw data](https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff-/edit/main/Antismash_data.md)
-+ 32개의 종류를 RiPP, NRP, Saccharide, PKS, terpene, Others 총 6개의 종류로 재분류하였고, 기준은 Antismash output중 proto cluster의 category에 해당하는 값(fatty acid의 경우 Others로 바꿈.)으로 하였다. 
++ Multi function의 조합으로 405종에 대한 function 결과는 총 85개의 조합을 갖는다. [Raw data](https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff-/edit/main/Antismash_data.md)
++ 32개의 종류를 RiPP, NRP, Saccharide, PKS, terpene, Others 총 6개의 종류로 재분류하였다. 
 + Others에 carbon cyclic compounds, fatty acid들이 해당한다. 
 
 
