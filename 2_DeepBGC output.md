@@ -27,6 +27,7 @@ NZ_CP074378.1_2073356-2074103,NZ_LOCM01000063.1_207-339,NZ_BOCI01000551.1_0-407,
 
 ## 2-2. DeepBGC에서 반환하는 product class에 대한 결과
 + BGC에 대한 결과
+
 ||DeepBGC|
 |-|-|
 |BGCs per genome(median)|11.82(10)|
@@ -37,6 +38,22 @@ NZ_CP074378.1_2073356-2074103,NZ_LOCM01000063.1_207-339,NZ_BOCI01000551.1_0-407,
 + Product activity : antibacterial, antifungal, cytotoxic, inhibitor, unknown activity
 + Product class : Alkaloid, NRP, RiPP, Terpene, Saccharide, Polyketide, Other, unknown class
 + 일부 종은 multi function을 갖는다. 
++ antiSMASH와 비교를 위해 class만 표기하였다. 
+|class|count|
+|-|-|
+|Alkaloid|0|
+|NRP|135|
+|RiPP|534|
+|other|77|
+|Polyketide|394|
+|Saccharide|846|
+|Terpene|48|
+|NAC|2753|
+|Polyketide;Terpene|9|
+|NRP;Polyketide|17|
+|Saccharide;Terpene|1|
+|RiPP;other|1|
+|sum|4815|
 + [Outputs]https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff-/blob/main/AS_DB_outputs)는 링크와 같다. 
 
 
