@@ -4,10 +4,11 @@
 
 ## 2. 데이터 수집
 + 데이터는 NCBI refseq 데이터 중, 고시형 균주 19종이 포함되는 9속에 해당하는 genome 중 representative genome의 gbff 파일을 사용하였다. 
-+ 연구에 사용된 9속 : Lactobacillus,Lacticaseibacillus,Lactiplantibacillus,Limosilactobacillus,Ligilactobacillus,Bifidobacterium,Enterococcus,Lactococcus,Streptococcus
++ 연구에 사용된 9속 : *Lactobacillus, Lacticaseibacillus,  Lactiplantibacillus, Limosilactobacillus, Ligilactobacillus, Bifidobacterium, Enterococcus, Lactococcus, Streptococcus*
 + 총 405개의 genome gbff 파일이 사용되었으며, 두 프로그램 모두 같은 데이터를 사용하였다. 
 
 ## 3. antiSMASH
+[antiSMASH detail outputs](https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff-/blob/main/1_Antismash_output.md)
 ### 3.1 antiSMASH running option
 + running option
 <pre>
@@ -60,6 +61,7 @@ antismash --output-dir --genefinding-tool none --hmmdetection-strictness loose -
 + antiSMASH raw data가  transAT-PKS;PKS-like일 때, 변환은 PKS;PKS로 이뤄졌다. 같은 category에 해당하는 세부 class가 중복될 때, 중복을 무시하고 PKS에 분류하였다. 
 
 ## 4 DeepBGC
+[DeepBGC detail outputs](https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff-/blob/main/2_DeepBGC%20output.md)
 ### 4.1 DeepBGC running option
 <pre>
 <code>
@@ -113,6 +115,7 @@ NZ_CP074378.1_2073356-2074103,NZ_LOCM01000063.1_207-339,NZ_BOCI01000551.1_0-407,
 |sum|4815|
 
 ## 5. antiSMASH & DeepBGC output comparing 
+[antiSMASH & DeepBGC output comparing detail](https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff-/blob/main/3_antiSMASH%2CDeepBGC%20Comparing)
 ### 5.1 DeepBGC와 antiSMASH에서 detected된 BGC의 기본적 정보 비교
 
 ||DeepBGC|antiSMASH|
@@ -121,11 +124,11 @@ NZ_CP074378.1_2073356-2074103,NZ_LOCM01000063.1_207-339,NZ_BOCI01000551.1_0-407,
 |length_bp(median)|48-429148(3068)|1093-103712(24227)|
 |number of genes(median)|1-407(3)|1-92(22)|
 
-+ genome당 detected된 BGC개수를 나타낸 그래프. x좌표 Antismash output count, y좌표 DeepBGC output count으로 나타냈다. 
++ genome당 detected된 BGC개수를 나타낸 그래프. x좌표 antiSMASH output count, y좌표 DeepBGC output count으로 나타냈다. 
 
 <img width="628" alt="as_bgc_db_bgc_ggeompoint" src="https://user-images.githubusercontent.com/97942772/178883455-bf243db2-75fd-472b-9841-2cd8603ad598.png">
 
-+ DeepBGC Output에서 Lacticaseibacillus jixianensis, Lactobacillus mulieris는 특이적으로 BGC가 각각 62개, 76개 detected 되어 그래프 가시성을 목적으로 제외했다. 
++ DeepBGC Output에서 *Lacticaseibacillus jixianensis, Lactobacillus mulieris*는 특이적으로 BGC가 각각 62개, 76개 detected 되어 그래프 가시성을 목적으로 제외했다. 
 
 
 ### 5.2 BGC의 gene locus tag을 이용한 유사도 측정.
@@ -142,6 +145,6 @@ NZ_CP074378.1_2073356-2074103,NZ_LOCM01000063.1_207-339,NZ_BOCI01000551.1_0-407,
 ![image](https://user-images.githubusercontent.com/97942772/178940469-0b7031c8-85d0-4621-a645-600c59f37813.png)
 
 
-+ 75개의 BGC의 경우 모든 locus tag이 일치해 같았고, 상위 10퍼센트의 BGC는 82% 이상의 locus tag의 일치도를 보였다. 
++ 75개의 BGC의 경우 모든 locus tag이 일치했다. 상위 10퍼센트의 BGC는 82% 이상의 locus tag의 일치도를 보였다. 
 
 # 6. antiSMASH, DeepBGC intergrating
