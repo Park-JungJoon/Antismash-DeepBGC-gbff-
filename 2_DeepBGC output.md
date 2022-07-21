@@ -39,6 +39,7 @@ NZ_CP074378.1_2073356-2074103,NZ_LOCM01000063.1_207-339,NZ_BOCI01000551.1_0-407,
 + Product class : Alkaloid, NRP, RiPP, Terpene, Saccharide, Polyketide, Other, unknown class
 + 일부 종은 multi function을 갖는다. 
 + antiSMASH와 비교를 위해 class만 표기하였다. 
+
 |class|count|
 |-|-|
 |Alkaloid|0|
