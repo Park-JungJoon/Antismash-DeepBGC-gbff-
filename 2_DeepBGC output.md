@@ -26,6 +26,13 @@ NZ_CP074378.1_2073356-2074103,NZ_LOCM01000063.1_207-339,NZ_BOCI01000551.1_0-407,
 </pre>
 
 ## 2-2. DeepBGC에서 반환하는 product class에 대한 결과
++ BGC에 대한 결과
+||DeepBGC|
+|-|-|
+|BGCs per genome(median)|11.82(10)|
+|length_bp(median)|48-429148(3068)|
+|number of genes(median)|1-407(3)|
+
 + DeepBGC는 Product class, Product activity를 결과로서 반환한다.
 + Product activity : antibacterial, antifungal, cytotoxic, inhibitor, unknown activity
 + Product class : Alkaloid, NRP, RiPP, Terpene, Saccharide, Polyketide, Other, unknown class
