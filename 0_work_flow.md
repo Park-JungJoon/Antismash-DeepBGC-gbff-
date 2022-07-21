@@ -113,7 +113,7 @@ NZ_CP074378.1_2073356-2074103,NZ_LOCM01000063.1_207-339,NZ_BOCI01000551.1_0-407,
 |sum|4815|
 
 ## 5. antiSMASH & DeepBGC output comparing 
-+ DeepBGC와 antiSMASH에서 detected된 BGC의 기본적 정보 비교
+### 5.1 DeepBGC와 antiSMASH에서 detected된 BGC의 기본적 정보 비교
 
 ||DeepBGC|antiSMASH|
 |-|-|-|
@@ -128,14 +128,10 @@ NZ_CP074378.1_2073356-2074103,NZ_LOCM01000063.1_207-339,NZ_BOCI01000551.1_0-407,
 + DeepBGC Output에서 Lacticaseibacillus jixianensis, Lactobacillus mulieris는 특이적으로 BGC가 각각 62개, 76개 detected 되어 그래프 가시성을 목적으로 제외했다. 
 
 
-
-
-
-
-
+### 5.2 BGC의 gene locus tag을 이용한 유사도 측정.
 + 각 프로그램에서 detected된 BGC간의 유사도를 측정하고자 gene의 lous tag을 지표로서 사용하였다. 
 + BGC의 locus tag의 구성을 jaccard similarity를 통해 측정하였다. 
-+ DeepBGC 4786개, antiSMASH 5045개 중, 같은 종의 같은 contig의 같은 locus tag을 공유하는 BGC는 1824개이다. [jaccard similarity](https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff-/blob/main/Supplementary%20data/result_region_lct_processed.txt).
++ DeepBGC 4786개, antiSMASH 5045개 중, 같은 locus tag을 공유하는 BGC는 1824개이다. [jaccard similarity](https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff-/blob/main/Supplementary%20data/result_region_lct_processed.txt).
 
 + 아래 히스토그램은 각각 1824개의 BGC에 대한 locus tag의 jaccad similarity 값을 표시하였다.
 
