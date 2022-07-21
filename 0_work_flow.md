@@ -31,7 +31,7 @@ antismash --output-dir --genefinding-tool none --hmmdetection-strictness loose -
 + 분류 기준은 antiSMASH의 gbk 파일의 proto cluster catergory를 참고하였다. 
 + Category : RiPP, NRP, Saccharide, PKS, terpene, Others 
 
-|function|count|
+|category|count|
 |-|-|
 |saccharide|3864|
 |RiPP|409|
