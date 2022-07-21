@@ -1,7 +1,3 @@
-Probiotics 405종에 대한 DeepBGC(gbff) output  
-==============================
-* DepBGC와 Antismash의 결과를 비교 분석하여 신뢰성이 높은 BGC를 찾아내는 것을 연구의 목적으로 한다.  
-
 # 1. DeepBGC running
 ## 1-1. Input data 선정 
 * 고시형 균주 19종이 포함된 9속(Enterococcus, Lactobacillus, Limosilactobacillus,Bifidobacterium, Lacticaseibacillus, Lactococcus, Streptococcus, Lactiplantibacillus, Ligilactobacillus) 중, NCBI representative genome에 해당하는 405종의 gbff 데이터를 사용함.
@@ -20,7 +16,7 @@ deepbgc pipeline --prodigal-meta-mode %s
 + 405개의 genome에서 총 4815개의 BGC가 detected 되었다. 
 ## 2-1. BGC output filtering 
 + DeepBGC가 detecting한 일부 BGC들의 경우 gene의 locus tag이 없는 경우가 있었음.
-+ 짧은 contig를 gene predicting을 통해 BGC라고 detect한 경우, NCBI에 등록된 gene이 없어 gene locus tag을 갖지 못했음.
++ DeepBGC가 짧은 contig를 gene predicting을 통해 BGC라고 detect한 경우, NCBI에 등록된 gene이 없어 gene locus tag을 갖지 못했음.
 + 이 경우, CDS에 BGC의 이름을 붙힌 후 기능을 임의로 부여했음. 
 + 아래는 29개의 BGC.
 <pre>
@@ -30,15 +26,13 @@ NZ_CP074378.1_2073356-2074103,NZ_LOCM01000063.1_207-339,NZ_BOCI01000551.1_0-407,
 </pre>
 
 ## 2-2. DeepBGC에서 반환하는 product class에 대한 결과
-+ [DeepBGC](https://github.com/Merck/deepbgc)에서 반환하는 결과
-+ 405종에 대한 product의 종류는 총 32개이고, 일부는 multi function을 가진다. 
-+ Multi function의 조합으로 405종에 대한 function 결과는 총 85개이다. 
++ DeepBGC는 Product class, Product activity를 결과로서 반환한다.
++ Product activity : antibacterial, antifungal, cytotoxic, inhibitor, unknown activity
++ Product class : Alkaloid, NRP, RiPP, Terpene, Saccharide, Polyketide, Other, unknown class
++ 일부 종은 multi function을 갖는다. 
 + [Outputs]https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff-/blob/main/AS_DB_outputs)는 링크와 같다. 
-+ 32개의 종류를 RiPP, NRP, Saccharide, PKS, terpene, Others 총 6개의 종류로 재분류하였고, 기준은 Antismash output중 proto cluster의 category에 해당하는 값(fatty acid의 경우 Other를 반환함.)으로 하였다. 
-+ Others에 carbon cyclic compounds, fatty acid들이 해당했다. 
-
 
 
 # 3. Output Parsing
 + Parsing의 결과로 Output에 포함하고자 하는 정보는 종명(meta)/기능/locus tag/protein ID이다. 
-+ Parsing을 위한 [code](https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff-/blob/main/codes)
++ Parsing을 위한 [code]([https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff-/blob/main/codes](https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff-/blob/main/Codes/DeepBGC%20locustag%20parsing.md)), 추가적으로 비교를 위한 Table로 가공하는 [code](https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff-/blob/main/Codes/db%20locus%20tag%20parsing%20file%20reprocessing.md)
