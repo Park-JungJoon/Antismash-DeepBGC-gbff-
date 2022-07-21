@@ -55,7 +55,7 @@ NZ_CP074378.1_2073356-2074103,NZ_LOCM01000063.1_207-339,NZ_BOCI01000551.1_0-407,
 |Saccharide;Terpene|1|
 |RiPP;other|1|
 |sum|4815|
-+ [Outputs]https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff-/blob/main/AS_DB_outputs)는 링크와 같다. 
+
 
 
 # 3. Output Parsing
