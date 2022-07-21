@@ -5,6 +5,7 @@
 ## 2. 데이터 수집
 + 데이터는 NCBI refseq 데이터 중, 고시형 균주 19종이 포함되는 9속에 해당하는 genome 중 representative genome의 gbff 파일을 사용하였다. 
 + 연구에 사용된 9속 : Lactobacillus,Lacticaseibacillus,Lactiplantibacillus,Limosilactobacillus,Ligilactobacillus,Bifidobacterium,Enterococcus,Lactococcus,Streptococcus
++ 총 405개의 genome gbff 파일이 사용되었으며, 두 프로그램 모두 같은 데이터를 사용하였다. 
 
 ## 3. antiSMASH
 ### 3.1 antiSMASH running option
