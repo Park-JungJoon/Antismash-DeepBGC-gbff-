@@ -27,7 +27,7 @@ antismash --output-dir --genefinding-tool none --hmmdetection-strictness loose -
 |Number of genes|1-92|11|
 
 + antiSMASH는 결과로 product의 세부적인 class를 반환한다. [antiSMASH output 종류](https://docs.antismash.secondarymetabolites.org/glossary/)
-+ 5045개의 BGC는 그 중, 32개의 product class를 가졌고, 일부는 multi class를 가졌다. 총 85개의 조합이 결과로서 반환되었다. 
++ 5045개의 BGC는 32개의 product class를 가졌고, 일부는 multi class를 가졌다. 총 85개의 조합이 결과로서 반환되었다. 
 + DeepBGC output과 수월한 비교를 위해 32개의 class를 총 6개의 category로 분류하였다. 
 + 분류 기준은 antiSMASH의 gbk 파일의 proto cluster catergory를 참고하였다. 
 + Category : RiPP, NRP, Saccharide, PKS, terpene, Others 
@@ -69,8 +69,8 @@ deepbgc pipeline --prodigal-meta-mode %s
 
 ### 4.2 DeepBGC output filtering 
 + 연구에 사용된 genome의 결과로 405개 genome에서 4815개의 BGC를 얻었다. 
-+ DeepBGC가 짧은 contig를 gene predicting을 통해 BGC라고 detect한 경우, NCBI에 등록된 gene이 없어 gene locus tag을 갖지 못했다.
-+ 이 경우, CDS에 BGC의 이름을 붙힌 후 locus tag을 임의로 부여했음. 
++ 짧은 contig에서 detected된 일부 BGC의 경우, gene predicting을 통해 gene을 추가하여 BGC라고 detect하였다. NCBI에 등록된 gene이 없어 gene locus tag을 갖지 못했다.
++ 이 경우, CDS에 BGC의 이름을 붙힌 후 locus tag을 임의로 부여했다. 
 + 아래는 29개의 BGC.
 <pre>
 <code>
