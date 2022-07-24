@@ -147,4 +147,20 @@ NZ_CP074378.1_2073356-2074103,NZ_LOCM01000063.1_207-339,NZ_BOCI01000551.1_0-407,
 
 + 75개의 BGC의 경우 모든 locus tag이 일치했다. 상위 10퍼센트의 BGC는 82% 이상의 locus tag의 일치도를 보였다. 
 
-# 6. antiSMASH, DeepBGC intergrating
+## 6. Updating raw data, antiSMASH parsing by protocore 
+### 6.1 Updating raw data
++ 2022년 02월 기준 데이터로 *Bifidobacterium amazonense*의 유전적 정보가 *Bifidobacterium_miconisargentati*의 유전적 정보와 같았다.
++ 두 종에 대한 정보를 보고한 Parma Univ에서 업로드 과정 중에 착오가 있었던 것으로 추정. 
++ 2022년 03월 *Bifidobacterium amazonense*의 데이터 업데이트. 
++ 03월 데이터로 다시 두 프로그램을 사용함. 
+
+### 6.2 antiSMASH by parsing protocore
++ antiSMASH의 결과 값은 candidate cluster, proto cluster, proto core로 구성됨.
++ proto core는 biosynthetic funciton을 encoding하는 짧은 region이다.
++ proto cluter는 proto core가 encoding 하는 산물이 fatty acid일 경우, core의 좌우 5000 base pair, 나머지 기능일 경우 좌우 10000 base pair를 포함한 region이다.
++ candidate cluster는 proto cluster의 영역이 이웃하거나, proto cluster의 일부분이 기능을 달리 할 경우, [antiSMASH program의 기준](https://docs.antismash.secondarymetabolites.org/understanding_output/)에 따라 통합한 최종 결과물이다. 
++ 앞선 연구에서 antiSMASH의 output을 candidate cluster를 기준으로 분석하였다. 5.1의 표에서 BGC에 평균적으로 포함되는 gene의 개수와 base pair length가 크게 차이가 났다.(7배 이상)
++ gene의 개수와 base pair length의 차이를 줄이기 위하여 antiSMASH의 output을 proto core로 변경하여 분석하고자 한다.
++ [코드](https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff-/blob/main/Codes/protocore_pasing_aS.py)
+
+## 7. antiSMASH, DeepBGC intergrating
