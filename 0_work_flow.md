@@ -156,9 +156,9 @@ NZ_CP074378.1_2073356-2074103,NZ_LOCM01000063.1_207-339,NZ_BOCI01000551.1_0-407,
 
 ### 6.2 antiSMASH by parsing protocore
 + antiSMASH의 결과 값은 candidate cluster, proto cluster, proto core로 구성됨.
-+ proto core는 biosynthetic funciton을 encoding하는 짧은 region이다.
-+ proto cluter는 proto core가 encoding 하는 산물이 fatty acid일 경우, core의 좌우 5000 base pair, 나머지 산물일 경우 좌우 10000 base pair를 포함한 region이다.
-+ candidate cluster는 proto cluster의 영역이 이웃하거나, proto cluster의 일부분이 기능을 달리 할 경우, [antiSMASH program의 기준](https://docs.antismash.secondarymetabolites.org/understanding_output/)에 따라 통합한 최종 결과물이다. 
++ proto core : biosynthetic funciton을 encoding하는 짧은 region이다.
++ proto cluter : proto core가 encoding 하는 산물이 fatty acid일 경우, core의 좌우 5000 base pair, 나머지 산물일 경우 좌우 10000 base pair를 포함한 region이다.
++ candidate cluster : proto cluster의 영역이 이웃하거나, proto cluster의 일부분이 기능을 달리 할 경우, [antiSMASH program의 기준](https://docs.antismash.secondarymetabolites.org/understanding_output/)에 따라 통합한 최종 결과물이다. 
 + 앞선 연구에서 antiSMASH의 output을 candidate cluster를 기준으로 분석하였다. 5.1의 표에서 BGC에 평균적으로 포함되는 gene의 개수와 base pair length가 크게 차이가 났다.(7배 이상)
 + gene의 개수와 base pair length의 차이를 줄이기 위하여 antiSMASH의 output을 proto core로 변경하여 분석하고자 한다.
 + [proto core를 통해 파싱한 결과](https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff-/blob/main/Supplementary%20data/updated_as_lct.txt), [코드](https://github.com/Park-JungJoon/Antismash-DeepBGC-gbff-/blob/main/Codes/protocore_pasing_aS.py)
